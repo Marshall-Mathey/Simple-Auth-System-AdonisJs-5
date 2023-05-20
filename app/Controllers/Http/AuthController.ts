@@ -2,7 +2,6 @@ import type { HttpContextContract } from "@ioc:Adonis/Core/HttpContext";
 import User from "App/Models/User";
 
 export default class AuthController {
-
   // show the login view
   async showLogin({ view }: HttpContextContract) {
     return view.render("auth/login");
@@ -15,9 +14,9 @@ export default class AuthController {
 
     try {
       await auth.use("web").attempt(email, password);
-      response.redirect().toRoute('welcome');
+      response.redirect().toRoute("welcome");
     } catch {
-      session.flash({error:"Invalid credentials"})
+      session.flash({ error: "Invalid credentials" });
       return response.redirect().back();
     }
   }
@@ -28,7 +27,7 @@ export default class AuthController {
   }
 
   // create new account
-  async create({ request, response, session, /*auth*/ }: HttpContextContract) {
+  async create({ request, response, session }: HttpContextContract) {
     const { name, email, password, confirmPassword } = request.all();
 
     try {
@@ -52,5 +51,10 @@ export default class AuthController {
     } catch (error) {
       throw error;
     }
+  }
+
+  async logout({ auth, response }: HttpContextContract) {
+    await auth.use("web").logout();
+    response.redirect().toRoute('login');
   }
 }
