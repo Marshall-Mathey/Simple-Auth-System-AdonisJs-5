@@ -6,19 +6,23 @@ This project is a simple authentication system built with Adonis.js, MySQL, and 
 
 Key Features:
 
- User registration with email and password
- User login and logout functionality
- Password hashing and secure storage in the database
- Middleware for protecting routes that require authentication
- User authentication using session-based authentication mechanism
+- User registration with email and password
+ 
+- User login and logout functionality
+ 
+- Password hashing and secure storage in the database
+ 
+- Middleware for protecting routes that require authentication
+ 
+- User authentication using session-based authentication mechanism
 
 Tech Stack:
 
- Adonis.js 5: A powerful Node.js web framework that provides a robust set of features for building scalable web applications.
+- Adonis.js 5: A powerful Node.js web framework that provides a robust set of features for building scalable web applications.
  
- MySQL: A widely-used open-source relational database management system, ensuring efficient and reliable data storage.
+- MySQL: A widely-used open-source relational database management system, ensuring efficient and reliable data storage.
  
- Tailwind CSS: A utility-first CSS framework that enables rapid prototyping and easy customization of the user interface.
+- Tailwind CSS: A utility-first CSS framework that enables rapid prototyping and easy customization of the user interface.
 
 This project serves as a foundation for implementing authentication functionality in your Adonis.js applications. You can extend it to suit your specific requirements and build upon it to develop more complex user management features.
 
